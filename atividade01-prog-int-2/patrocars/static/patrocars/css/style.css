@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    /* background-color: rgb(136, 5, 103); */
+    background-color: #39B54A;
+    padding: 20px;
+    
+}
+
+.container-titulo {
+    color: white;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-flow: row wrap;
+    width: fit-content;
+}
+
+span {
+    margin-right: 15px;
+    font-size: 3rem;
+}
+
+
+.titulo {
+    font-size: 4rem;
+}
