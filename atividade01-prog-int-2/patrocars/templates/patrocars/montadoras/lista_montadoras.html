@@ -1,0 +1,39 @@
+{% include 'patrocars/partials/head.html' %}
+
+
+<body>
+    {% include 'patrocars/partials/header.html' %}
+
+    <h2>Lista de Montadoras</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>País</th>
+                <th>Ano de Fundação</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for montadora in montadoras %}
+                <tr>
+                    <td>{{ montadora.nome }}</td>
+                    <td>{{ montadora.pais }}</td>
+                    <td>{{ montadora.ano_fundacao }}</td>
+                    <td>
+                        <a href="{% url 'patrocars:detalhe_montadora' montadora.id %}">Ver Detalhes</a>
+                        <a href="{% url 'patrocars:editar_montadora' montadora.id %}">Editar</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">Nenhuma montadora cadastrada.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'patrocars:criar_montadora' %}">Adicionar Nova Montadora</a>
+
+</body>
+</html>

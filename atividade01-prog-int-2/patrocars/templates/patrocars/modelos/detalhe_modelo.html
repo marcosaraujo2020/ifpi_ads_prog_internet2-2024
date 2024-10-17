@@ -1,0 +1,20 @@
+{% include 'patrocars/partials/head.html' %}
+
+
+<body>
+    {% include 'patrocars/partials/header.html' %}
+
+    <h2>Detalhes do Modelo de Veículo</h2>
+
+    <p><strong>Nome:</strong> {{ modelo.nome }}</p>
+    <p><strong>Montadora:</strong> {{ modelo.montadora.nome }}</p>
+    <p><strong>Valor de Referência:</strong> {{ modelo.valor_referencia }}</p>
+    <p><strong>Motorização:</strong> {{ modelo.motorizacao }}L</p>
+    <p><strong>Turbo:</strong> {{ modelo.turbo|yesno:"Sim,Não" }}</p>
+    <p><strong>Automático:</strong> {{ modelo.automatico|yesno:"Sim,Não" }}</p>
+
+    <a href="{% url 'patrocars:editar_modelo' modelo.id %}">Editar Modelo</a>
+    <a href="{% url 'patrocars:lista_modelos' %}">Voltar para a lista</a>
+
+</body>
+</html>

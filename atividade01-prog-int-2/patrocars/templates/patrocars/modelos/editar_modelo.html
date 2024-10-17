@@ -1,0 +1,18 @@
+{% include 'patrocars/partials/head.html' %}
+
+
+<body>
+    {% include 'patrocars/partials/header.html' %}
+
+    <h2>Editar Modelo de Veículo</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar Alterações</button>
+    </form>
+
+    <a href="{% url 'patrocars:detalhe_modelo' modelo.id %}">Cancelar</a>
+
+</body>
+</html>

@@ -1,8 +1,20 @@
 from django.db import models
+import ulid
+
 
 # Create your models here.
+class ULIDField(models.CharField):
+    
+    def __init__(self, *args, **kwargs):
+        kwargs['max_length'] = 26  
+        kwargs['default'] = ulid.new
+        kwargs['editable'] = False  
+        super().__init__(*args, **kwargs)
+
+
 class Montadora(models.Model):
-    id = models.AutoField(primary_key=True)  
+    """ id = models.AutoField(primary_key=True) """  
+    id = ULIDField(primary_key=True)
     nome = models.CharField(max_length=100)
     pais = models.CharField(max_length=100)
     ano_fundacao = models.IntegerField()
@@ -12,7 +24,8 @@ class Montadora(models.Model):
 
 
 class ModelosDeVeiculos(models.Model):
-    id = models.AutoField(primary_key=True)  
+    """ id = models.AutoField(primary_key=True) """  
+    id = ULIDField(primary_key=True)
     nome = models.CharField(max_length=100)
     montadora = models.ForeignKey(Montadora, on_delete=models.CASCADE)  
     valor_referencia = models.DecimalField(max_digits=10, decimal_places=2)
@@ -25,7 +38,8 @@ class ModelosDeVeiculos(models.Model):
 
 
 class Veiculos(models.Model):
-    id = models.AutoField(primary_key=True)  
+    """ id = models.AutoField(primary_key=True) """  
+    id = ULIDField(primary_key=True)
     modelo = models.ForeignKey(ModelosDeVeiculos, on_delete=models.CASCADE)  
     cor = models.CharField(max_length=50)
     ano_fabricacao = models.IntegerField()
