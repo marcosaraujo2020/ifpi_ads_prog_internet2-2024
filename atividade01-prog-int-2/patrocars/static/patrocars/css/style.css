@@ -12,6 +12,10 @@ body {
     font-size: 1.6rem;
 }
 
+main {
+    width: 50vw;
+}
+
 .container {
     display: flex;
     flex-flow: row wrap;
@@ -20,6 +24,8 @@ body {
     padding: 20px;
     
 }
+
+
 
 .container-titulo {
     color: white;

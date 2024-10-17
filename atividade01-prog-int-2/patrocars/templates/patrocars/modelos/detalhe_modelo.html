@@ -13,8 +13,8 @@
     <p><strong>Turbo:</strong> {{ modelo.turbo|yesno:"Sim,Não" }}</p>
     <p><strong>Automático:</strong> {{ modelo.automatico|yesno:"Sim,Não" }}</p>
 
-    <a href="{% url 'patrocars:editar_modelo' modelo.id %}">Editar Modelo</a>
-    <a href="{% url 'patrocars:lista_modelos' %}">Voltar para a lista</a>
+    <button><a href="{% url 'patrocars:editar_modelo' modelo.id %}">Editar</a></button>
+    <button><a href="{% url 'patrocars:lista_modelos' %}">Voltar</a></button>
 
 </body>
 </html>

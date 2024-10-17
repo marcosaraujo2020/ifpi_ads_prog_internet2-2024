@@ -13,8 +13,7 @@ class ULIDField(models.CharField):
 
 
 class Montadora(models.Model):
-    """ id = models.AutoField(primary_key=True) """  
-    id = ULIDField(primary_key=True)
+    id = models.CharField(primary_key=True, default=ulid.new, editable=False, max_length=26)
     nome = models.CharField(max_length=100)
     pais = models.CharField(max_length=100)
     ano_fundacao = models.IntegerField()
@@ -25,7 +24,7 @@ class Montadora(models.Model):
 
 class ModelosDeVeiculos(models.Model):
     """ id = models.AutoField(primary_key=True) """  
-    id = ULIDField(primary_key=True)
+    id = models.CharField(primary_key=True, default=ulid.new, editable=False, max_length=26)
     nome = models.CharField(max_length=100)
     montadora = models.ForeignKey(Montadora, on_delete=models.CASCADE)  
     valor_referencia = models.DecimalField(max_digits=10, decimal_places=2)
@@ -38,8 +37,7 @@ class ModelosDeVeiculos(models.Model):
 
 
 class Veiculos(models.Model):
-    """ id = models.AutoField(primary_key=True) """  
-    id = ULIDField(primary_key=True)
+    id = models.CharField(primary_key=True, default=ulid.new, editable=False, max_length=26)
     modelo = models.ForeignKey(ModelosDeVeiculos, on_delete=models.CASCADE)  
     cor = models.CharField(max_length=50)
     ano_fabricacao = models.IntegerField()

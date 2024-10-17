@@ -4,36 +4,39 @@
 <body>
     {% include 'patrocars/partials/header.html' %}
 
-    <h2>Lista de Modelos de Veículos</h2>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Montadora</th>
-                <th>Valor de Referência</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for modelo in modelos %}
+    <main>
+        <h2>Lista de Modelos de Veículos</h2>
+        <button><a href="{% url 'patrocars:criar_modelo' %}">Novo</a></button>
+        <table>
+            <thead>
                 <tr>
-                    <td>{{ modelo.nome }}</td>
-                    <td>{{ modelo.montadora.nome }}</td>
-                    <td>{{ modelo.valor_referencia }}</td>
-                    <td>
-                        <a href="{% url 'patrocars:detalhe_modelo' modelo.id %}">Ver Detalhes</a>
-                        <a href="{% url 'patrocars:editar_modelo' modelo.id %}">Editar</a>
-                    </td>
+                    <th>Nome</th>
+                    <th>Montadora</th>
+                    <th>Valor de Referência</th>
+                    <th>Ações</th>
                 </tr>
-            {% empty %}
-                <tr>
-                    <td colspan="4">Nenhum modelo cadastrado.</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <a href="{% url 'patrocars:criar_modelo' %}">Adicionar Novo Modelo</a>
+            </thead>
+            <tbody>
+                {% for modelo in modelos %}
+                    <tr>
+                        <td>{{ modelo.nome }}</td>
+                        <td>{{ modelo.montadora.nome }}</td>
+                        <td>{{ modelo.valor_referencia }}</td>
+                        <td>
+                            <button><a href="{% url 'patrocars:detalhe_modelo' modelo.id %}">Detalhes</a></button>
+                            <button><a href="{% url 'patrocars:editar_modelo' modelo.id %}">Editar</a></button>
+                            <button><a href="#">Deletar</a></button>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="4">Nenhum modelo cadastrado.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+   
 
 </body>
 </html>

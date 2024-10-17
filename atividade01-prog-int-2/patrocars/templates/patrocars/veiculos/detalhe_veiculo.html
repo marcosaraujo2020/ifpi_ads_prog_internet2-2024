@@ -13,8 +13,8 @@
     <p><strong>Placa:</strong> {{ veiculo.placa }}</p>
     <p><strong>Vendido:</strong> {{ veiculo.vendido|yesno:"Sim,Não" }}</p>
 
-    <a href="{% url 'patrocars:editar_veiculo' veiculo.id %}">Editar Veículo</a>
-    <a href="{% url 'patrocars:lista_veiculos' %}">Voltar para a lista</a>
+    <button><a href="{% url 'patrocars:editar_veiculo' veiculo.id %}">Editar</a></button>
+    <button><a href="{% url 'patrocars:lista_veiculos' %}">Voltar</a></button>
 
 </body>
 </html>

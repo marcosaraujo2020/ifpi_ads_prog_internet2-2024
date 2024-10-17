@@ -4,38 +4,43 @@
 <body>
     {% include 'patrocars/partials/header.html' %}
 
-    <h2>Lista de Veiculos</h2>
+    <main>
+        <h2>Lista de Veiculos</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Modelo</th>
-                <th>Cor</th>
-                <th>Ano de Fabricação</th>
-                <th>Valor</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for veiculo in veiculos %}
+        <button><a href="{% url 'patrocars:criar_veiculo' %}">Novo</a></button>
+        
+        <table>
+            <thead>
                 <tr>
-                    <td>{{ veiculo.modelo.nome }}</td>
-                    <td>{{ veiculo.cor }}</td>
-                    <td>{{ veiculo.ano_fabricacao }}</td>
-                    <td>{{ veiculo.valor }}</td>
-                    <td>
-                        <a href="{% url 'patrocars:detalhe_veiculo' veiculo.id %}">Ver Detalhes</a>
-                        <a href="{% url 'patrocars:editar_veiculo' veiculo.id %}">Editar</a>
-                    </td>
+                    <th>Modelo</th>
+                    <th>Cor</th>
+                    <th>Ano de Fabricação</th>
+                    <th>Valor</th>
+                    <th>Ações</th>
                 </tr>
-            {% empty %}
-                <tr>
-                    <td colspan="5">Nenhum veículo cadastrado.</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <a href="{% url 'patrocars:criar_veiculo' %}">Adicionar Novo Veículo</a>
+            </thead>
+            <tbody>
+                {% for veiculo in veiculos %}
+                    <tr>
+                        <td>{{ veiculo.modelo.nome }}</td>
+                        <td>{{ veiculo.cor }}</td>
+                        <td>{{ veiculo.ano_fabricacao }}</td>
+                        <td>{{ veiculo.valor }}</td>
+                        <td>
+                            <button><a href="{% url 'patrocars:detalhe_veiculo' veiculo.id %}">Detalhes</a></button>
+                            <button><a href="{% url 'patrocars:editar_veiculo' veiculo.id %}">Editar</a></button>
+                            <button><a href="#">Deletar</a></button>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="5">Nenhum veículo cadastrado.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+    
 
 </body>
 </html>

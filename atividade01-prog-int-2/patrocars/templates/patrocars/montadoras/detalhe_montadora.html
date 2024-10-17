@@ -2,6 +2,7 @@
 
 
 <body>
+   
     {% include 'patrocars/partials/header.html' %}
 
     <h2>Detalhes da Montadora</h2>
@@ -10,8 +11,8 @@
     <p><strong>País:</strong> {{ montadora.pais }}</p>
     <p><strong>Ano de Fundação:</strong> {{ montadora.ano_fundacao }}</p>
 
-    <a href="{% url 'patrocars:editar_montadora' montadora.id %}">Editar Montadora</a>
-    <a href="{% url 'patrocars:lista_montadoras' %}">Voltar para a lista</a>
+    <button><a href="{% url 'patrocars:editar_montadora' montadora.id %}">Editar</a></button>
+    <button><a href="{% url 'patrocars:lista_montadoras' %}">Voltar</a></button>
 
 </body>
 </html>
