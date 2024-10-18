@@ -8,7 +8,9 @@ from . import views
 app_name = "patrocars"
 
 urlpatterns = [
+    
     path('montadora/', views.montadora, name='montadora'), #Teste
+    path('', views.home, name='home'),
     
     path('montadoras/', views.lista_montadoras, name='lista_montadoras'),
     path('montadoras/criar/', views.criar_montadora, name='criar_montadora'),
@@ -30,7 +32,8 @@ urlpatterns = [
     path('veiculos/excluir/<str:veiculo_id>/', views.excluir_veiculo, name='excluir_veiculo'),
     path('veiculos/<str:veiculo_id>/', views.detalhe_veiculo, name='detalhe_veiculo'),
     
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] 
+""" + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) """
 
 
 

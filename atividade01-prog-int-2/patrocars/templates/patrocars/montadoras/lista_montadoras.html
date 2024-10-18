@@ -30,7 +30,7 @@
                         <td>
                             <button><a href="{% url 'patrocars:detalhe_montadora' montadora.id %}">Detalhes</a></button>
                             <button><a href="{% url 'patrocars:editar_montadora' montadora.id %}">Editar</a></button>
-                            <button><a href="#">Deletar</a></button>
+                            <button><a href="{% url 'patrocars:excluir_montadora' montadora.id %}">Deletar</a></button>
                         </td>
                     </tr>
                 {% empty %}

@@ -1,15 +1,22 @@
 <header class="container">
+   
     <div class="container-titulo">
-        <span><i class="fa-solid fa-car-rear"></i></span>
-        <span>
-            <h1 class="titulo">PatroCars</h1>
-        </span>
-        <nav>
-            <ul>
-                <li><a href="{% url 'patrocars:lista_montadoras' %}">Montadoras</a></li>
-                <li><a href="{% url 'patrocars:lista_modelos' %}">Modelos</a></li>
-                <li><a href="{% url 'patrocars:lista_veiculos' %}">Veículos</a></li>
-            </ul>
-        </nav>
+        
+        <div class="titulo-patrocars">
+            <a href="{% url 'patrocars:home' %}" class="link-home">
+                <span class="span-icon"><i class="fa-solid fa-car-rear"></i></span>
+                <span class="span-titulo">
+                    <h1 class="titulo">PatroCars</h1>
+                </span>
+            </a>
+        </div>
+
+        <div class="navegacao-patrocars">
+            <nav>
+                <a href="{% url 'patrocars:lista_montadoras' %}">Montadoras</a>
+                <a href="{% url 'patrocars:lista_modelos' %}">Modelos</a>
+                <a href="{% url 'patrocars:lista_veiculos' %}">Veículos</a>  
+            </nav>
+        </div>
     </div>
 </header>
