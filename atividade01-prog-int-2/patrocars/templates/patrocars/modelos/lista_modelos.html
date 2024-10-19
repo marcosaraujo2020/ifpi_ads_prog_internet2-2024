@@ -5,36 +5,39 @@
     {% include 'patrocars/partials/header.html' %}
 
     <main>
-        <h2>Lista de Modelos de Veículos</h2>
-        <button><a href="{% url 'patrocars:criar_modelo' %}">Novo</a></button>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Montadora</th>
-                    <th>Valor de Referência</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for modelo in modelos %}
+        
+        <div class="container-sm mt-5" style="width:50vw">
+            <h2>Modelos</h2>
+            <button class="btn btn-primary"><a href="{% url 'patrocars:criar_modelo' %}">Novo</a></button>
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <td>{{ modelo.nome }}</td>
-                        <td>{{ modelo.montadora.nome }}</td>
-                        <td>{{ modelo.valor_referencia }}</td>
-                        <td>
-                            <button><a href="{% url 'patrocars:detalhe_modelo' modelo.id %}">Detalhes</a></button>
-                            <button><a href="{% url 'patrocars:editar_modelo' modelo.id %}">Editar</a></button>
-                            <button><a href="#">Deletar</a></button>
-                        </td>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Valor de Referência</th>
+                        <th scope="col">Ações</th>
                     </tr>
-                {% empty %}
-                    <tr>
-                        <td colspan="4">Nenhum modelo cadastrado.</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {% for modelo in modelos %}
+                        <tr>
+                            <td>{{ modelo.nome }}</td>
+                            <td>{{ modelo.montadora.nome }}</td>
+                            <td>R$ {{ modelo.valor_referencia }}</td>
+                            <td>
+                                <button class="btn btn-warning"><a href="{% url 'patrocars:detalhe_modelo' modelo.id %}" >Detalhes</a></button>
+                                <button class="btn btn-success"><a href="{% url 'patrocars:editar_modelo' modelo.id %}" >Editar</a></button>
+                                <button class="btn btn-danger"><a href="{% url 'patrocars:excluir_modelo' modelo.id %}" >Deletar</a></button>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="4">Nenhum modelo cadastrado.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </main>
    
 

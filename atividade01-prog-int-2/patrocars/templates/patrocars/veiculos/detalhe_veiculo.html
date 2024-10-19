@@ -4,17 +4,20 @@
 <body>
     {% include 'patrocars/partials/header.html' %}
 
-    <h2>Detalhe de Veiculo</h2>
+    <div class="container-sm mt-5" style="width: 500px;">
+        <h2>Detalhes do Veiculo</h2><br>
 
-    <p><strong>Modelo:</strong> {{ veiculo.modelo.nome }}</p>
-    <p><strong>Cor:</strong> {{ veiculo.cor }}</p>
-    <p><strong>Ano de Fabricação:</strong> {{ veiculo.ano_fabricacao }}</p>
-    <p><strong>Valor:</strong> {{ veiculo.valor }}</p>
-    <p><strong>Placa:</strong> {{ veiculo.placa }}</p>
-    <p><strong>Vendido:</strong> {{ veiculo.vendido|yesno:"Sim,Não" }}</p>
+        <p><strong>Marca:</strong> {{ veiculo.modelo.montadora.nome }}</p>
+        <p><strong>Modelo:</strong> {{ veiculo.modelo.nome }}</p>
+        <p><strong>Cor:</strong> {{ veiculo.cor }}</p>
+        <p><strong>Ano de Fabricação:</strong> {{ veiculo.ano_fabricacao }}</p>
+        <p><strong>Ano Modelo:</strong> {{ veiculo.ano_modelo }}</p>
+        <p><strong>Valor:</strong> R$ {{ veiculo.valor }}</p>
+        <p><strong>Placa:</strong> {{ veiculo.placa }}</p>
+        <p><strong>Vendido:</strong> {{ veiculo.vendido|yesno:"Sim,Não" }}</p>
 
-    <button><a href="{% url 'patrocars:editar_veiculo' veiculo.id %}">Editar</a></button>
-    <button><a href="{% url 'patrocars:lista_veiculos' %}">Voltar</a></button>
-
+        <button class="btn btn-success"><a href="{% url 'patrocars:editar_veiculo' veiculo.id %}">Editar</a></button>
+        <button class="btn btn-secondary"><a href="{% url 'patrocars:lista_veiculos' %}">Voltar</a></button>
+    </div>
 </body>
 </html>

@@ -1,18 +1,30 @@
 {% include 'patrocars/partials/head.html' %}
 
+{% load crispy_forms_tags %}
+
+
+
 
 <body>
     {% include 'patrocars/partials/header.html' %}
 
-    <h2>Criar Nova Montadora</h2>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Salvar</button>
-    </form>
-
-    <Button><a href="{% url 'patrocars:lista_montadoras' %}">Voltar</a></Button>
+    <br>
+    
+    <div class="container-sm" style="width: 500px;">
+       
+        <h2>Criar Nova Montadora</h2>
+       
+        <button class="btn btn-secondary"><a href="{% url 'patrocars:lista_montadoras' %}">Voltar</a></button>
+        
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+        
+    </div>
+       
+   
 
 </body>
 </html>

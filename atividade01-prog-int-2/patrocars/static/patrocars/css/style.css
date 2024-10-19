@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -16,11 +18,17 @@ body {
     font-size: 1.6rem;
 }
 
+
+main {
+    margin-top: 10px;
+}
+
 .container {
     display: flex;
     justify-content: center;
-    padding: 20px 0px 5px 0px;  
+    padding: 10px 0px 5px 0px;  
     background-color: #39B54A;
+    box-shadow: 3px 3px 10px #1d5c25;
     /* background-color: rgb(136, 5, 103); */
 }
 
@@ -33,7 +41,17 @@ body {
     gap: 10px;
 }
 
+h1.titulo {
+    font-family: "DM Serif Text", serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+
+
 nav > a {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
     color: white;
     text-decoration: none;
     margin: 10px;
@@ -56,6 +74,10 @@ nav > a:hover {
     gap: 25px;
     text-decoration: none;
     color: white;
+}
+
+.link-home:hover {
+    color: #1d5c25;
 }
 
 .span-icon {
@@ -82,6 +104,7 @@ nav > a:hover {
     align-items: center;
     text-align: center;
     height: 50vh;
+   
 }
 
 .home-page {
@@ -89,8 +112,9 @@ nav > a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100vw;
+    width: 70vw;
     height: 30vh;
+   
 }
 
 
@@ -98,6 +122,14 @@ nav > a:hover {
     font-family: "Audiowide", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 4rem;
+    font-size: 5rem;
   }
   
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: white;
+}

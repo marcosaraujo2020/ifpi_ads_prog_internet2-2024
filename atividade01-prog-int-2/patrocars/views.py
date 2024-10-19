@@ -39,10 +39,8 @@ def editar_montadora(request, montadora_id):
 
 def excluir_montadora(request, montadora_id):
     montadora = get_object_or_404(Montadora, id=montadora_id)
-    if request.method == 'POST':
-        montadora.delete()
-        return redirect('patrocars:lista_montadoras')
-    return render(request, 'patrocars/montadoras/lista_montadoras.html', {'montadora': montadora})
+    montadora.delete()
+    return redirect('patrocars:lista_montadoras')
 
 
 
@@ -79,13 +77,11 @@ def editar_modelo(request, modelo_id):
     return render(request, 'patrocars/modelos/editar_modelo.html', {'form': form, 'modelo': modelo})
 
 
-def excluir_modelo(request, pk):
-    modelo = get_object_or_404(ModelosDeVeiculos, pk=pk)
-    if request.method == 'POST':
-        modelo.delete()
-        return redirect('patrocars:lista_modelos')
-    return render(request, 'patrocars/modelos/excluir_modelo.html', {'modelo': modelo})
-
+def excluir_modelo(request, modelo_id):
+    modelo = get_object_or_404(ModelosDeVeiculos, id=modelo_id)
+    modelo.delete()
+    return redirect('patrocars:lista_modelos')
+    
 
 
 def lista_veiculos(request):
@@ -121,12 +117,10 @@ def editar_veiculo(request, veiculo_id):
     return render(request, 'patrocars/veiculos/editar_veiculo.html', {'form': form, 'veiculo': veiculo})
 
 
-def excluir_veiculo(request, pk):
-    veiculo = get_object_or_404(Veiculos, pk=pk)
-    if request.method == 'POST':
-        veiculo.delete()
-        return redirect('patrocars:lista_veiculos')
-    return render(request, 'patrocars/veiculos/excluir_veiculo.html', {'veiculo': veiculo})
+def excluir_veiculo(request, veiculo_id):
+    veiculo = get_object_or_404(Veiculos, id=veiculo_id)
+    veiculo.delete()
+    return redirect('patrocars:lista_veiculos')
 
 
 

@@ -5,14 +5,14 @@
    
     {% include 'patrocars/partials/header.html' %}
 
-    <h2>Detalhes da Montadora</h2>
-
-    <p><strong>Nome:</strong> {{ montadora.nome }}</p>
-    <p><strong>País:</strong> {{ montadora.pais }}</p>
-    <p><strong>Ano de Fundação:</strong> {{ montadora.ano_fundacao }}</p>
-
-    <button><a href="{% url 'patrocars:editar_montadora' montadora.id %}">Editar</a></button>
-    <button><a href="{% url 'patrocars:lista_montadoras' %}">Voltar</a></button>
+    <div class="container-sm mt-5" style="width: 500px;">
+        <h2>Detalhes da Montadora</h2>
+        <p><strong>Nome:</strong> {{ montadora.nome }}</p>
+        <p><strong>País:</strong> {{ montadora.pais }}</p>
+        <p><strong>Ano de Fundação:</strong> {{ montadora.ano_fundacao }}</p>
+        <button class="btn btn-success"><a href="{% url 'patrocars:editar_montadora' montadora.id %}">Editar</a></button>
+        <button class="btn btn-secondary"><a href="{% url 'patrocars:lista_montadoras' %}">Voltar</a></button>
+    </div>
 
 </body>
 </html>
