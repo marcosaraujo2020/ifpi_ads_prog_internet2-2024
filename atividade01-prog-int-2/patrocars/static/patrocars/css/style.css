@@ -23,10 +23,11 @@ main {
     margin-top: 10px;
 }
 
-.container {
+.custom-container {
     display: flex;
     justify-content: center;
     padding: 10px 0px 5px 0px;  
+    margin: 0;
     background-color: #39B54A;
     box-shadow: 3px 3px 10px #1d5c25;
     /* background-color: rgb(136, 5, 103); */

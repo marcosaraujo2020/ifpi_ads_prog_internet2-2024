@@ -33,10 +33,16 @@ urlpatterns = [
     path('veiculos/<str:veiculo_id>/', views.detalhe_veiculo, name='detalhe_veiculo'),
     
 ] 
+
+
+
+
+
+
+
+
+
 """ + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) """
-
-
-
 
 """ 
 Testando .... 
