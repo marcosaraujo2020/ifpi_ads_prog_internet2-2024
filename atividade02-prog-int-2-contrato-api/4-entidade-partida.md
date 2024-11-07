@@ -20,8 +20,8 @@
 
 **Pós-Condições**: Nenhuma.
 
-```
-typescriptCopiar código// output caso sucesso (200 OK)
+```typescript
+// output caso sucesso (200 OK)
 {
     partidas: {
         id: string,
@@ -49,8 +49,8 @@ typescriptCopiar código// output caso sucesso (200 OK)
 
 **Pós-Condições**: Uma nova partida é criada e salva no sistema.
 
-```
-typescriptCopiar código// input
+```typescript
+// input
 {
     local: string,
     data: string,
@@ -87,8 +87,8 @@ typescriptCopiar código// input
 
 **Pós-Condições**: Nenhuma.
 
-```
-typescriptCopiar código// output caso sucesso (200 OK)
+```typescript
+// output caso sucesso (200 OK)
 {
     partida: {
         id: string,
@@ -118,7 +118,7 @@ typescriptCopiar código// output caso sucesso (200 OK)
 
 
 
-```ty
+```typescript
 // input
 {
     local?: string,
@@ -155,7 +155,7 @@ typescriptCopiar código// output caso sucesso (200 OK)
 
 **Pós-Condições**: A partida é excluída ou marcada como excluída.
 
-```ty
+```typescript
 // output caso sucesso (200 OK)
 {}
 ```
@@ -176,7 +176,7 @@ em caso de sucesso, essa API retorna um `image/jpeg` com status `200 OK`.
 
 
 
-```ty
+```typescript
 // output caso a partida especificada não tenha uma imagem (404 Not Found)
 {
     error: "partida_imagem_not_found",
@@ -200,7 +200,7 @@ O corpo desta requisição deve ser um `image/jpeg`.
 
 
 
-```ty
+```typescript
 // output caso sucesso (200 OK)
 {}
 ```
@@ -219,7 +219,7 @@ O corpo desta requisição deve ser um `image/jpeg`.
 
 
 
-```ty
+```typescript
 // output caso sucesso (200 OK)
 {}	
 ```
