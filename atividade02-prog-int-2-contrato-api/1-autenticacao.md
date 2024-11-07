@@ -39,6 +39,8 @@
 
 **Outros erros**: [bad_request](./8-erros.md#bad_request)
 
+-----
+
 ## POST /api/login
 
 **Descrição**: Cria uma nova sessão
@@ -59,6 +61,8 @@
 
 **Outros erros**: [bad_request](./8-erros.md#bad_request), [bad_credentials](./8-erros.md#bad_credentials)
 
+-----
+
 ## POST /api/logoff
 
 **Descrição**: Encerra uma sessão
@@ -75,6 +79,8 @@
 ```
 
 **Outros erros**: [bad_request](./8-erros.md#bad_request), [unauthorized](./8-erros.md#unauthorized)
+
+-----
 
 ## POST /api/signoff
 

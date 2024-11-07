@@ -152,8 +152,6 @@
 
 ------
 
-
-
 ## GET /api/arena/:id/imagem
 
 **Descrição**: Retorna a imagem de uma arena.

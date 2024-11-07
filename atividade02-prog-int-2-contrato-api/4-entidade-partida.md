@@ -1,6 +1,6 @@
 # Entidade Partida
 
-- [Entidade partida](#entidade-partida)
+- [Entidade Partida](#entidade-partida)
   - [GET /api/partida](#get-apipartida)
   - [POST /api/partida](#post-apipartida)
   - [GET /api/partida/:id](#get-apipartidaid)
@@ -106,7 +106,7 @@
 
 **Outros erros**: [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden), [partida_id_not_found](./8-erros.md#partida_id_not_found)
 
-
+------
 
 ## PUT /api/partida/:id
 
@@ -145,7 +145,7 @@
 
 **Outros erros**: [bad_request](./8-erros.md#bad_request), [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden), [partida_id_not_found](./8-erros.md#partida_id_not_found)
 
-
+------
 
 ## DELETE /api/partida/:id
 
@@ -162,7 +162,7 @@
 
 **Outros erros**: [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden), [partida_id_not_found](./8-erros.md#partida_id_not_found)
 
-
+------
 
 ## GET /api/partida/:id/imagem
 
@@ -186,7 +186,7 @@ em caso de sucesso, essa API retorna um `image/jpeg` com status `200 OK`.
 
 **Outros erros**: [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden), [partida_id_not_found](./8-erros.md#partida_id_not_found)
 
-
+------
 
 ## PUT /api/partida/:id/imagem
 
@@ -207,7 +207,7 @@ O corpo desta requisição deve ser um `image/jpeg`.
 
 **Outros erros**: [bad_request](./8-erros.md#bad_request), [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden), [partida_id_not_found](./8-erros.md#partida_id_not_found)
 
-
+------
 
 ## DELETE /api/partida/:id/imagem
 

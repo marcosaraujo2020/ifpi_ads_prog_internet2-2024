@@ -43,6 +43,8 @@
 
 **Outros erros**: [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden)
 
+------
+
 ## POST /api/equipe
 
 **Descrição**: Cria uma nova equipe
@@ -116,6 +118,8 @@
 
 **Outros erros**: [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden), [equipe_id_not_found](./8-erros.md#equipe_id_not_found)
 
+------
+
 ## PUT /api/equipe/:id
 
 **Descrição**: Atualiza os dados de uma equipe
@@ -156,6 +160,8 @@
 
 **Outros erros**: [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden), [equipe_id_not_found](./8-erros.md#equipe_id_not_found)
 
+------
+
 ## DELETE /api/equipe/:id
 
 **Descrição**: Apaga uma equipe
@@ -170,6 +176,8 @@
 ```
 
 **Outros erros**: [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden), [equipe_id_not_found](./8-erros.md#equipe_id_not_found)
+
+------
 
 ## GET /api/equipe/:id/imagem
 
@@ -191,6 +199,8 @@ em caso de sucesso, essa api retorna um `image/jpeg` com status `200 OK`
 
 **Outros erros**: [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden), [equipe_id_not_found](./8-erros.md#equipe_id_not_found)
 
+------
+
 ## PUT /api/equipe/:id/imagem
 
 **Descrição**: Exclui a imagem da equipe, ou faz nada se a equipe não tiver imagem
@@ -207,6 +217,8 @@ o corpo dessa requisição tem que ser um `image/jpeg`
 ```
 
 **Outros erros**: [bad_request](./8-erros.md#bad_request), [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden), [equipe_id_not_found](./8-erros.md#equipe_id_not_found)
+
+------
 
 ## DELETE /api/equipe/:id/imagem
 

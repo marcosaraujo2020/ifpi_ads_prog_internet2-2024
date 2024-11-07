@@ -16,6 +16,8 @@ esse erro pode ocorrer em todas as apis que recebem json
 }
 ```
 
+-----
+
 ### bad_credentials
 
 output caso você informe um usuário e senha inválido (401 Unauthorized)
@@ -26,6 +28,8 @@ output caso você informe um usuário e senha inválido (401 Unauthorized)
     description: "informe um usuário e senha já cadastrados no sistema",
 }
 ```
+
+-----
 
 ### unauthorized
 
@@ -40,6 +44,8 @@ esse erro ocorre quando você não envia o cookie de sessão para o servidor, qu
 }
 ```
 
+-----
+
 ### forbidden
 
 output caso você não tenha acesso ao recurso (403 Forbidden)
@@ -53,6 +59,8 @@ esse erro ocorre quando você não está autenticado mas suas credenciais não p
 }
 ```
 
+-----
+
 ### usuario_id_not_found
 
 output caso você não especifique um id de usuário que não existe (404 Not Found)
@@ -63,6 +71,8 @@ output caso você não especifique um id de usuário que não existe (404 Not Fo
     description: "esse usuário não existe",
 }
 ```
+
+-----
 
 ### equipe_id_not_found
 
@@ -75,6 +85,8 @@ output caso você não especifique um id de equipe que não existe (404 Not Foun
 }
 ```
 
+-----
+
 ### partida_id_not_found
 
 output caso você não especifique um id de partida que não existe (404 Not Found)
@@ -86,6 +98,8 @@ output caso você não especifique um id de partida que não existe (404 Not Fou
 }
 ```
 
+-----
+
 ### arena_id_not_found
 
 output caso você não especifique um id de arena que não existe (404 Not Found)
@@ -96,6 +110,8 @@ output caso você não especifique um id de arena que não existe (404 Not Found
     description: "essa arena não existe",
 }
 ```
+
+-----
 
 ### quadra_id_not_found
 

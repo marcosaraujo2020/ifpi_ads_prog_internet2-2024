@@ -32,6 +32,8 @@
 
 **Outros erros**: [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden)
 
+------
+
 ## PUT /api/usuario
 
 **Descrição**: Atualiza os dados do usuário
@@ -62,6 +64,8 @@
 
 **Outros erros**: [bad_request](./8-erros.md#bad_request) [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden)
 
+------
+
 ## GET /api/usuario/:id
 
 **Descrição**: Retorna um usuário
@@ -86,6 +90,8 @@
 
 **Outros erros**: [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden), [usuario_id_not_found](./8-erros.md#usuario_id_not_found)
 
+------
+
 ## GET /api/usuario/:id/imagem
 
 **Descrição**: Retorna a imagem do usuário
@@ -106,6 +112,8 @@ em caso de sucesso, essa api retorna um `image/jpeg` com status `200 OK`
 
 **Outros erros**: [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden), [usuario_id_not_found](./8-erros.md#usuario_id_not_found)
 
+------
+
 ## PUT /api/usuario/imagem
 
 **Descrição**: Exclui a imagem do usuário, ou faz nada se o usuário não tiver imagem
@@ -122,6 +130,8 @@ o corpo dessa requisição tem que ser um `image/jpeg`
 ```
 
 **Outros erros**: [bad_request](./8-erros.md#bad_request), [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden)
+
+------
 
 ## DELETE /api/usuario/imagem
 

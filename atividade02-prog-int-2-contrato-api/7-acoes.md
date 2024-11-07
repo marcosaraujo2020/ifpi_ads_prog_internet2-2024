@@ -24,6 +24,8 @@
 
 **Outros erros**: [bad_request](./8-erros.md#bad_request), [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden)
 
+-----
+
 ## POST /api/partida/:id/confirmar
 
 **Descrição**: Uma breve descrição do que essa api faz
@@ -47,6 +49,8 @@
 ```
 
 **Outros erros**: [bad_request](./8-erros.md#bad_request), [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden)
+
+-----
 
 ## POST /api/partida/:id/iniciar
 
@@ -72,6 +76,8 @@
 
 **Outros erros**: [bad_request](./8-erros.md#bad_request), [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden)
 
+-----
+
 ## POST /api/partida/:id/terminar
 
 **Descrição**: Uma breve descrição do que essa api faz
@@ -94,6 +100,8 @@
 ```
 
 **Outros erros**: [bad_request](./8-erros.md#bad_request), [unauthorized](./8-erros.md#unauthorized), [forbidden](./8-erros.md#forbidden)
+
+-----
 
 ## POST /api/partida/:id/cancelar
 
