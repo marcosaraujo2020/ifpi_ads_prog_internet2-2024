@@ -1,6 +1,7 @@
 
+//Para fins didáticos (Recomendação variável de ambiente)
 export const jwtConstants = {
-    secret: "uma-chave-complexa-e-segura-para-meu-projeto",
-    secretOrKey: 'estrategia-secreta',
+    secret: "testando-meu-projeto",
+    secretOrKey: 'testando--estrategia-secreta',
   };
   

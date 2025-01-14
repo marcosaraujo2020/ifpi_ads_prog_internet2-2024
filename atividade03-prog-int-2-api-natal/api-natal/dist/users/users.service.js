@@ -18,6 +18,8 @@ const typeorm_1 = require("@nestjs/typeorm");
 const user_entity_1 = require("./user.entity");
 const typeorm_2 = require("typeorm");
 const bcrypt = require("bcrypt");
+const email_duplicated_exception_1 = require("../common/exceptions/email-duplicated-exception");
+const validator_exception_1 = require("../common/exceptions/validator-exception");
 let UsersService = class UsersService {
     constructor(usersRepository) {
         this.usersRepository = usersRepository;
@@ -37,11 +39,19 @@ let UsersService = class UsersService {
         return this.usersRepository.findOne({ where: { email } });
     }
     async createUser(userDto) {
+        const email = userDto.email;
+        const findUser = await this.usersRepository.findOne({ where: { email } });
+        if (findUser) {
+            throw new email_duplicated_exception_1.EmailDuplicatedException();
+        }
+        if (userDto.password !== userDto.confirmPassword) {
+            throw new validator_exception_1.ValidatorException('Senhas não coincidem.');
+        }
         const newUser = {
             ...userDto,
             password: await bcrypt.hash(userDto.password, 10)
         };
-        const createUser = await this.usersRepository.save(newUser);
+        const createUser = await this.usersRepository.save(new user_entity_1.User(newUser.nome, newUser.email, newUser.password));
         return {
             ...createUser,
             password: undefined

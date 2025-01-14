@@ -3,4 +3,5 @@ export declare class UsersDto {
     readonly nome: string;
     readonly email: string;
     readonly password?: string;
+    readonly confirmPassword?: string;
 }

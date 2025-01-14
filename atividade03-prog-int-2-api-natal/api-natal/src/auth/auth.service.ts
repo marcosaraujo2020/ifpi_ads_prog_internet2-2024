@@ -47,7 +47,7 @@ export class AuthService {
 
     async createRefreshToken(user: any): Promise<string> {
         const payload = { sub: user.id, username: user.nome, email: user.email };
-        return this.jwtService.signAsync(payload, { expiresIn: '10m' });
+        return this.jwtService.signAsync(payload, { expiresIn: '2m' });
     }
 
    

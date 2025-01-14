@@ -11,6 +11,7 @@ import { User } from 'src/users/user.entity';
 import { UserModule } from 'src/users/users.module';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
+import { jwtConstants } from './constants';
 
 @Module({
     imports: [
@@ -20,7 +21,7 @@ import { AuthService } from './auth.service';
         PassportModule,
         JwtModule.register({
             global: true,
-            secret: process.env.JWT_SECRET, //jwtConstants.secret, 
+            secret: jwtConstants.secret, //, process.env.JWT_SECRET
             signOptions: { expiresIn: '60s'},
         })
     ],

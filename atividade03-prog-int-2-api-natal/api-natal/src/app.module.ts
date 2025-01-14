@@ -1,9 +1,9 @@
-import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { UserModule } from './users/users.module';
-import { LoggerMiddleware } from './common/middlewares/logger.middleware';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
+import { LoggerMiddleware } from './common/middlewares/logger.middleware';
+import { UserModule } from './users/users.module';
 
 
 @Module({
@@ -34,8 +34,9 @@ export class AppModule implements NestModule {
     consumer
       .apply(LoggerMiddleware)
       .forRoutes(
-        {path: 'signin', method: RequestMethod.POST},
-        {path: 'signup', method: RequestMethod.POST}
+        '*',
+        //{path: 'signin', method: RequestMethod.POST},
+        //{path: 'signup', method: RequestMethod.POST}
       );
   }
 }

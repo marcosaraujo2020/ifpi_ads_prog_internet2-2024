@@ -50,7 +50,7 @@ let AuthService = class AuthService {
     }
     async createRefreshToken(user) {
         const payload = { sub: user.id, username: user.nome, email: user.email };
-        return this.jwtService.signAsync(payload, { expiresIn: '10m' });
+        return this.jwtService.signAsync(payload, { expiresIn: '2m' });
     }
     async refreshToken(token) {
         const decoded = this.jwtService.verify(token);

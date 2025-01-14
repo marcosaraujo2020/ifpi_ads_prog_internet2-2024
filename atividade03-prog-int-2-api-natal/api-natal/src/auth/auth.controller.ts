@@ -1,7 +1,6 @@
-import { Body, Controller, Get, Headers, HttpCode, HttpStatus, Post, Request, Res, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpStatus, Post, Request, Res } from '@nestjs/common';
 import { Response } from 'express';
 import { Public } from 'src/common/decorators/public.decorator';
-import { RefreshTokenGuard } from 'src/common/guards/refresh-token.guard';
 import { AuthDto } from './auth.dto';
 import { AuthService } from './auth.service';
 
@@ -20,8 +19,6 @@ export class AuthController {
     }
 
 
-    //@UseGuards(RefreshTokenGuard)
-    @Public()
     @Post('refresh')
     async refresh(@Request() req) {
         const token = req.headers.authorization.split(' ')[1];

@@ -1,9 +1,8 @@
-import { Body, Controller, Get, Param, Post, Res, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Res } from '@nestjs/common';
 import { Response } from 'express';
 import { NotFoundException } from 'src/common/exceptions/notfound-exception';
 import { UsersDto } from './users.dto';
 import { UsersService } from './users.service';
-import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
 
 
 @Controller('users')

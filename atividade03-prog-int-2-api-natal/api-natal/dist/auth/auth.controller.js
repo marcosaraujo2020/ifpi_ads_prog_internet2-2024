@@ -48,7 +48,6 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "signIn", null);
 __decorate([
-    (0, public_decorator_1.Public)(),
     (0, common_1.Post)('refresh'),
     __param(0, (0, common_1.Request)()),
     __metadata("design:type", Function),

@@ -15,6 +15,7 @@ const jwt_1 = require("@nestjs/jwt");
 const constants_1 = require("../../auth/constants");
 const core_1 = require("@nestjs/core");
 const public_decorator_1 = require("../decorators/public.decorator");
+const unauthorized_exception_1 = require("../exceptions/unauthorized-exception");
 let AuthGuard = class AuthGuard {
     constructor(jwtService, reflector) {
         this.jwtService = jwtService;
@@ -31,7 +32,7 @@ let AuthGuard = class AuthGuard {
         const request = context.switchToHttp().getRequest();
         const token = this.extractTokenFromHeader(request);
         if (!token) {
-            throw new common_1.UnauthorizedException();
+            throw new unauthorized_exception_1.UnauthorizedErrorException('Token não informado');
         }
         try {
             const payload = await this.jwtService.verifyAsync(token, {
@@ -40,7 +41,7 @@ let AuthGuard = class AuthGuard {
             request['user'] = payload;
         }
         catch {
-            throw new common_1.UnauthorizedException();
+            throw new unauthorized_exception_1.UnauthorizedErrorException('Token inválido ou expirado');
         }
         return true;
     }
