@@ -20,7 +20,6 @@ const user_entity_1 = require("../users/user.entity");
 const users_module_1 = require("../users/users.module");
 const auth_controller_1 = require("./auth.controller");
 const auth_service_1 = require("./auth.service");
-const constants_1 = require("./constants");
 let AuthModule = class AuthModule {
 };
 exports.AuthModule = AuthModule;
@@ -33,7 +32,7 @@ exports.AuthModule = AuthModule = __decorate([
             passport_1.PassportModule,
             jwt_1.JwtModule.register({
                 global: true,
-                secret: constants_1.jwtConstants.secret,
+                secret: process.env.JWT_SECRET,
                 signOptions: { expiresIn: '60s' },
             })
         ],

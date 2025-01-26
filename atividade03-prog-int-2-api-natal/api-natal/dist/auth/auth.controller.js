@@ -17,6 +17,12 @@ const common_1 = require("@nestjs/common");
 const public_decorator_1 = require("../common/decorators/public.decorator");
 const auth_dto_1 = require("./auth.dto");
 const auth_service_1 = require("./auth.service");
+const zod_1 = require("zod");
+const validator_exception_1 = require("../common/exceptions/validator-exception");
+const createSchema = zod_1.z.object({
+    nome: zod_1.z.string().min(4),
+    email: zod_1.z.string().email(),
+});
 let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
@@ -33,6 +39,11 @@ let AuthController = class AuthController {
         return req.user;
     }
     async signup(response, body) {
+        const resultado = createSchema.safeParse(body);
+        if (!resultado.success) {
+            console.log('error');
+            throw new validator_exception_1.ValidatorException('Insira um nome com pelo menos 4 caracteres e um e-mail válido');
+        }
         const userCreated = await this.authService.signup(body);
         return response.status(201).json(userCreated);
     }
