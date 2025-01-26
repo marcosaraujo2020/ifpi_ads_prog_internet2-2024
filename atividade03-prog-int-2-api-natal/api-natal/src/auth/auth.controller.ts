@@ -42,8 +42,8 @@ export class AuthController {
     @Post('signup')
     @HttpCode(HttpStatus.CREATED)
     async signup(@Res() response: Response, @Body() body: AuthDto) {
-        const resultado = createSchema.safeParse(body);
-        if(!resultado.success){
+        const res = createSchema.safeParse(body);
+        if(!res.success){
             console.log('error')
             throw  new ValidatorException('Insira um nome com pelo menos 4 caracteres e um e-mail válido');
             //res.error;
